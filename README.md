@@ -60,10 +60,6 @@ To set up **CaseLedger** on your local machine, follow these steps:
 3. **Verify Records**:
    Ensure the integrity of case records with blockchain verification.
 
-## API Documentation
-
-Detailed API documentation is available for interacting with the blockchain and managing case records. For more information, refer to the [API Documentation](docs/API.md).
-
 ## Contributing
 
 We welcome contributions to **CaseLedger**! To contribute:
