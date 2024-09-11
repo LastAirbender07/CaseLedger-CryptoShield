@@ -6,16 +6,6 @@ require('dotenv').config();
 const PRIVATE_KEY2 = process.env.PRIVATE_KEY;
 const ETHERLINKTEST_URL = process.env.ETHERLINKTEST_URL;
 
-// module.exports = {
-//   solidity: "0.8.24",
-//   networks:{
-//     sepolia:{
-//       url: SEPOLIA_URL,
-//       accounts:[PRIVATE_KEY],
-//     },
-//   },
-// };
-
 module.exports = {
   solidity: "0.8.24",
   networks: {

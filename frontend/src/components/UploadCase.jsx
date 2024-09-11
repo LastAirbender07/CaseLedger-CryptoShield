@@ -137,7 +137,7 @@ const UploadCase = ({ state }) => {
   const sendLogToServer = async (logData) => {
     try {
       console.log("Log Data:", logData);
-      const response = await fetch("http://192.168.3.1:5000/logs", {
+      const response = await fetch("http://11.12.20.126:5000/logs", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
