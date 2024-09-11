@@ -6,8 +6,8 @@ import crypto from '../assets/images/crypto.png'
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
-  { name: 'Display', href: '/Display', current: false },
-  { name: 'Upload', href: '/Upload', current: false },
+  { name: 'Display', href: '/display', current: false },
+  { name: 'Upload', href: '/upload', current: false },
   // {name: 'OCR', href: '/OCR', current: false},
 ]
 

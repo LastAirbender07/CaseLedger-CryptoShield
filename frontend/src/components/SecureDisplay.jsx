@@ -69,15 +69,48 @@ const SecureDisplay = ({ state }) => {
 
             console.log(decryptedDataArray);
             setCaseData(decryptedDataArray);  // Set case data after decryption
+            const logData = {
+                address: account,
+                caseName: 'N/A',
+                event: 'View Accessible Cases',
+                timestamp: new Date().toISOString(),
+                result: 'success'
+            };
+            await sendLogToServer(logData);
         } catch (e) {
             alert("You don't have access or an error occurred");
             console.error(e);
+            const logData = {
+                address: account,
+                caseName: 'N/A',
+                event: 'View Case',
+                timestamp: new Date().toISOString(),
+                result: 'error' + e.message
+            };
+            await sendLogToServer(logData);
         }
     };
 
     const handleShareAccess = (caseID) => {
         setSelectedCaseID(caseID);
         setShowShareAccess(true);
+    };
+
+    const sendLogToServer = async (logData) => {
+        try {
+            console.log('Log Data:', logData);
+            const response = await fetch('http://192.168.3.1:5000/logs', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(logData)
+            });
+            const data = await response.json();
+            console.log('Log sent successfully:', data);
+        } catch (error) {
+            console.error('Error sending log:', error);
+        }
     };
 
     return (
